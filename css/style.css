@@ -1,0 +1,30 @@
+div {
+    background-color: rgb(174, 0, 255);
+    padding: 1%;
+}
+
+button.classic {
+    background-color: green;
+    color: whitesmoke;
+}
+
+p.classic {
+    color: red;
+}
+
+div#page div {
+    background-color: gold;
+}
+
+.container {
+    min-width: 300px;
+    min-height: 200px;
+}
+
+h1 {
+    color: white;
+}
+
+body {
+    margin: 2%;
+}
