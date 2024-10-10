@@ -1,17 +1,34 @@
+// Obtener referencias a los elementos del DOM
+const altoElemento = document.getElementById('alto');
+const anchoElemento = document.getElementById('ancho');
+const nuevoAltoInput = document.getElementById('nuevoAlto');
+const nuevoAnchoInput = document.getElementById('nuevoAncho');
 
-document.getElementById("ancho").innerHTML;
-document.getElementById("alto").innerHTML;
-
-const contentElement = document.getElementById('content');
-const windowWidth = window.innerWidth;//ancho de ventana
-const windowHeight = window.innerHeight;//alto de ventana 
+const contentElement = document.getElementById('container');
+//let windowWidth = window.innerWidth;//ancho de ventana
+//let windowHeight = window.innerHeight;//alto de ventana 
 
 // cambiando tamaño de ventana
 function resizeWindow() {
-  const contentWidth = contentElement.offsetWidth;
-  const contentHeight = contentElement.offsetHeight;
-  window.resizeTo(Math.max(contentWidth, windowWidth), Math.max(contentHeight, windowHeight));
+  altoElemento.textContent = window.innerHeight;
+  anchoElemento.textContent = window.innerWidth;
 }
 
-contentElement.addEventListener('DOMSubtreeModified', resizeWindow);
+// Llamar a la función para mostrar las dimensiones actuales
+resizeWindow();
 
+// Escuchar el evento resize y llamar a la función de actualización
+window.addEventListener('resize', resizeWindow);
+
+// Agregar un event listener a los inputs para cambiar el tamaño de la ventana
+nuevoAltoInput.addEventListener('input', () => {
+  // Validar el valor ingresado
+  const nuevoAlto = Math.max(0, parseInt(nuevoAltoInput.value));
+  contentElement.style.height = nuevoAlto + 'px'; // Ajustar el alto del contenido
+});
+
+nuevoAnchoInput.addEventListener('input', () => {
+  // Validar el valor ingresado
+  const nuevoAncho = Math.max(0, parseInt(nuevoAnchoInput.value));
+  contentElement.style.width = nuevoAncho + 'px'; // Ajustar el ancho del contenido
+});
