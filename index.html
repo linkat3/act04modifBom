@@ -6,13 +6,15 @@
     <title>Modificando BOM</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body id="content">
-    <div>
-        <h1>Trabajando con ventanas</h1>
-        <span>Ancho de la ventana es:  <span id="ancho"></span></span>
-        git remote add origin https://github.com/linkat3/act04modifBom.git
-        <br>
-        <span>Alto de la ventana es: <span id="alto"></span> </span>
+<body>
+    <div id="container">
+        <h1>Información de la Ventana</h1>
+        <p class="classic">Alto de la ventana: <span id="alto" class="info"></span> px</p>
+        <p class="classic">Ancho de la ventana: <span id="ancho" class="info"></span> px</span></p>
+        <label for="nuevoAlto" class="info">Nuevo Alto:</label>
+        <input type="number" id="nuevoAlto">
+        <label for="nuevoAncho" class="info">Nuevo Ancho:</label>
+        <input type="number" id="nuevoAncho">
     </div>
 </body>
 <script src="./js/dom.js"></script>
